@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="04N-aS-K8K">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-qd-lI9">
+                                <rect key="frame" x="83" y="68" width="155" height="155"/>
+                                <state key="normal" image="Record">
+                                    <color key="titleColor" red="1" green="0.19730566742902322" blue="0.30682494690609541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sq0-wO-eDy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht5-WM-FtL">
+                                <rect key="frame" x="83" y="272" width="155" height="155"/>
+                                <state key="normal" image="Stop"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Iw-XE-Imc"/>
+                                    <segue destination="X2w-7s-Fgn" kind="show" id="vS0-Ya-lm4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs0-oY-siP">
+                                <rect key="frame" x="100" y="243" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ht5-WM-FtL" firstAttribute="top" secondItem="Abv-qd-lI9" secondAttribute="bottom" constant="49" id="1La-23-Nee"/>
+                            <constraint firstItem="rs0-oY-siP" firstAttribute="centerX" secondItem="Abv-qd-lI9" secondAttribute="centerX" id="FqY-2U-n5R"/>
+                            <constraint firstItem="rs0-oY-siP" firstAttribute="top" secondItem="Abv-qd-lI9" secondAttribute="bottom" constant="20" id="Hgq-1H-4go"/>
+                            <constraint firstItem="ht5-WM-FtL" firstAttribute="centerX" secondItem="Abv-qd-lI9" secondAttribute="centerX" id="IwT-Zk-eCG"/>
+                            <constraint firstItem="Abv-qd-lI9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-94.5" id="es5-dr-9DG"/>
+                            <constraint firstItem="Abv-qd-lI9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iyS-Xm-IpK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W5S-Vf-AK8"/>
+                    <connections>
+                        <outlet property="recordButton" destination="Abv-qd-lI9" id="ynK-Rq-WDm"/>
+                        <outlet property="recordingProgress" destination="rs0-oY-siP" id="SZ5-26-ceO"/>
+                        <outlet property="stopRecordingButton" destination="ht5-WM-FtL" id="8Up-uR-2oQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="147.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="L5h-eA-BdP">
+            <objects>
+                <viewController id="X2w-7s-Fgn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qs7-6a-6H7"/>
+                        <viewControllerLayoutGuide type="bottom" id="CvL-ek-T98"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gzZ-sx-4jc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a78-RO-uWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="puy-k8-ZNP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="04N-aS-K8K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BPT-TE-iBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I3d-49-HtB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZM-x6-lie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-157.5" y="147.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Record" width="155" height="155"/>
+        <image name="Stop" width="155" height="155"/>
+    </resources>
+</document>
