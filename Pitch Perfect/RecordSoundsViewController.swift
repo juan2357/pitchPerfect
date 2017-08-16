@@ -61,7 +61,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
-
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        print("finished recording")
+        performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+    }
  
 }
 
