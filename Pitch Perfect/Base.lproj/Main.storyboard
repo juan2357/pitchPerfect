@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record Sounds View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,6 @@
                                 <state key="normal" image="Stop"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Iw-XE-Imc"/>
-                                    <segue destination="X2w-7s-Fgn" kind="show" id="vS0-Ya-lm4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs0-oY-siP">
@@ -60,16 +59,17 @@
                         <outlet property="recordButton" destination="Abv-qd-lI9" id="ynK-Rq-WDm"/>
                         <outlet property="recordingProgress" destination="rs0-oY-siP" id="SZ5-26-ceO"/>
                         <outlet property="stopRecordingButton" destination="ht5-WM-FtL" id="8Up-uR-2oQ"/>
+                        <segue destination="X2w-7s-Fgn" kind="show" identifier="stopRecording" id="IXz-XR-JfH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="147.5"/>
+            <point key="canvasLocation" x="675" y="148"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Sounds View Controller-->
         <scene sceneID="L5h-eA-BdP">
             <objects>
-                <viewController id="X2w-7s-Fgn" sceneMemberID="viewController">
+                <viewController id="X2w-7s-Fgn" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qs7-6a-6H7"/>
                         <viewControllerLayoutGuide type="bottom" id="CvL-ek-T98"/>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a78-RO-uWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="148"/>
+            <point key="canvasLocation" x="1468" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="puy-k8-ZNP">
