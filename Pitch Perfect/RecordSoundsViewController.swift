@@ -31,12 +31,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
+    
     @IBAction func recordAudio(_ sender: Any) {
-        recordingProgress.text = "Recording in Progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+//        recordingProgress.text = "Recording in Progress"
+//        stopRecordingButton.isEnabled = true
+//        recordButton.isEnabled = false
 
+        updateUI(isRecording: true, labelText: "Recording in Progress")
+        
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -52,14 +55,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.prepareToRecord()
         audioRecorder.record()
     }
-
+    
     @IBAction func stopRecording(_ sender: Any) {
-        recordButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
-        recordingProgress.text = "Tap to Record"
+//        recordingProgress.text = "Tap to Record"
+//        stopRecordingButton.isEnabled = false
+//        recordButton.isEnabled = true
+        
+        updateUI(isRecording: false, labelText: "Tap to Record")
+        
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+    }
+    
+    func updateUI (isRecording:Bool, labelText:String) {
+        recordingProgress.text = labelText
+        stopRecordingButton.isEnabled = isRecording
+        recordButton.isEnabled = !isRecording
+
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
@@ -77,6 +90,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }
+    
+
  
 }
 
