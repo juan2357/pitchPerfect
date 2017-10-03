@@ -19,7 +19,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordingProgress.imageView?.contentMode = .scaleAspectFit
+      
         recordButton.imageView?.contentMode = .scaleAspectFit
         stopRecordingButton.imageView?.contentMode = .scaleAspectFit
         
